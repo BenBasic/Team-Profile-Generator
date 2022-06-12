@@ -165,7 +165,7 @@ function init() {
             {
                 type: "input",
                 name: "schoolIntern",
-                message: "What school does your intern go to??",
+                message: "What school does your intern go to?",
                 validate: userAnswer => {
                     if (userAnswer !== "") {
                         return true;
