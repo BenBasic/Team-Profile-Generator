@@ -48,9 +48,35 @@ function init() {
                         return true;
                     } return "You must enter a valid phone number to continue" 
                 }
-            }])
-    
+            }]).then(answers => {
+                const manager = new Manager(answers.nameManager, answers.idManager, answers.emailManager, answers.phoneManager);
+                teamArray.push(manager);
+                idArray.push(answers.idManager);
+                assignTeam();
+            });
     }
     assignManager();
+
+    function assignTeam() {
+        
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "roleList",
+                message: "What type of team member do you want to add to your team?",
+                choices: ["Engineer", "Intern", "I don't want to add anyone"]
+            }]).then(userRoleAnswer => {
+                switch (userRoleAnswer.roleList) {
+                    case "Engineer":
+                        // Should probably add a function for engineer prompts here
+                        break;
+                    case "Intern":
+                        // Should probably add a function for intern prompts here
+                        break;
+                    default:
+                        // Should probably add a function for creating the html document here
+                }
+            })
+    }
 }
 init();
