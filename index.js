@@ -7,6 +7,55 @@ const idArray = [];
 
 function init() {
 
+    function assignManager() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "nameManager",
+                message: "What is your manager's first name?",
+                validate: userAnswer => {
+                    if (userAnswer !== "") {
+                        return true;
+                    } return "You must enter a first name to continue"
+                }
+            },
+            {
+                type: "input",
+                name: "idManager",
+                message: "What is your manager's ID?",
+                validate: userAnswer => {
+                    if (userAnswer !== "") {
+                        return true;
+                    } return "You must enter an ID to continue" 
+                }
+            },
+            {
+                type: "input",
+                name: "emailManager",
+                message: "What is your manager's email address?",
+                validate: userAnswer => {
+                    if (userAnswer !== "" && userAnswer.includes("@") && userAnswer.includes(".")) {
+                        return true;
+                    } return "You must enter an email address to continue" 
+                }
+            },
+            {
+                type: "input",
+                name: "phoneManager",
+                message: "What is your manager's office phone number?",
+                validate: userAnswer => {
+                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12) {
+                        return true;
+                    } return "You must enter a valid phone number to continue" 
+                }
+            }]).then(answers => {
+                const manager = new Manager(answers.nameManager, answers.idManager, answers.emailManager, answers.phoneManager);
+                teamArray.push(manager);
+                idArray.push(answers.idManager);
+                assignTeam();
+            });
+    }
+
     function assignTeam() {
         
         inquirer.prompt([
@@ -18,10 +67,10 @@ function init() {
             }]).then(userRoleAnswer => {
                 switch (userRoleAnswer.roleList) {
                     case "Engineer":
-                        // Should probably add a function for engineer prompts here
+                        assignEngineer();
                         break;
                     case "Intern":
-                        // Should probably add a function for intern prompts here
+                        assignIntern();
                         break;
                     default:
                         // Should probably add a function for creating the html document here
@@ -78,13 +127,12 @@ function init() {
             });
     }
 
-    
-    function assignManager() {
+    function assignIntern() {
         inquirer.prompt([
             {
                 type: "input",
-                name: "nameManager",
-                message: "What is your manager's first name?",
+                name: "nameIntern",
+                message: "What is your intern's first name?",
                 validate: userAnswer => {
                     if (userAnswer !== "") {
                         return true;
@@ -93,8 +141,8 @@ function init() {
             },
             {
                 type: "input",
-                name: "idManager",
-                message: "What is your manager's ID?",
+                name: "idIntern",
+                message: "What is your intern's ID?",
                 validate: userAnswer => {
                     if (userAnswer !== "") {
                         return true;
@@ -103,8 +151,8 @@ function init() {
             },
             {
                 type: "input",
-                name: "emailManager",
-                message: "What is your manager's email address?",
+                name: "emailIntern",
+                message: "What is your intern's email address?",
                 validate: userAnswer => {
                     if (userAnswer !== "" && userAnswer.includes("@") && userAnswer.includes(".")) {
                         return true;
@@ -113,20 +161,22 @@ function init() {
             },
             {
                 type: "input",
-                name: "phoneManager",
-                message: "What is your manager's office phone number?",
+                name: "schoolIntern",
+                message: "What school does your intern go to??",
                 validate: userAnswer => {
-                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12) {
+                    if (userAnswer !== "") {
                         return true;
-                    } return "You must enter a valid phone number to continue" 
+                    } return "You must enter a school name to continue" 
                 }
             }]).then(answers => {
-                const manager = new Manager(answers.nameManager, answers.idManager, answers.emailManager, answers.phoneManager);
-                teamArray.push(manager);
-                idArray.push(answers.idManager);
+                const intern = new Intern(answers.nameIntern, answers.idIntern, answers.emailIntern, answers.schoolIntern);
+                teamArray.push(intern);
+                idArray.push(answers.idIntern);
                 assignTeam();
             });
     }
+
+    
     assignManager();
 
 
