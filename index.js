@@ -1,12 +1,15 @@
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const generate = require("./lib/generateHTML");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
 const teamArray = [];
 const idArray = [];
+
+
 
 function init() {
 
@@ -76,7 +79,7 @@ function init() {
                         assignIntern();
                         break;
                     default:
-                        // Should probably add a function for creating the html document here
+                        createHTML();
                 }
             });
     }
@@ -179,9 +182,9 @@ function init() {
             });
     }
 
-    
+    function createHTML() {
+        fs.writeFileSync("index.html", generate(teamArray))
+    };  
     assignManager();
-
-
 }
 init();
