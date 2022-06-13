@@ -20,7 +20,7 @@ function init() {
                 name: "nameManager",
                 message: "What is your manager's first name?",
                 validate: userAnswer => {
-                    if (userAnswer !== "") {
+                    if (userAnswer !== "" /* Make sure to add && typeof userAnswer === "string" to check and make sure user actually typed a name */) {
                         return true;
                     } return "You must enter a first name to continue"
                 }
@@ -50,7 +50,7 @@ function init() {
                 name: "phoneManager",
                 message: "What is your manager's office phone number?",
                 validate: userAnswer => {
-                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12) {
+                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12 /* Make sure to add && typeof userAnswer === "number" to check and make sure user actually typed a number */) {
                         return true;
                     } return "You must enter a valid phone number to continue" 
                 }
@@ -91,7 +91,7 @@ function init() {
                 name: "nameEngineer",
                 message: "What is your engineer's first name?",
                 validate: userAnswer => {
-                    if (userAnswer !== "") {
+                    if (userAnswer !== "" /* Make sure to add && typeof userAnswer === "string" to check and make sure user actually typed a name */) {
                         return true;
                     } return "You must enter a first name to continue"
                 }
@@ -140,7 +140,7 @@ function init() {
                 name: "nameIntern",
                 message: "What is your intern's first name?",
                 validate: userAnswer => {
-                    if (userAnswer !== "") {
+                    if (userAnswer !== "" /* Make sure to add && typeof userAnswer === "string" to check and make sure user actually typed a name */) {
                         return true;
                     } return "You must enter a first name to continue"
                 }
@@ -170,7 +170,7 @@ function init() {
                 name: "schoolIntern",
                 message: "What school does your intern go to?",
                 validate: userAnswer => {
-                    if (userAnswer !== "") {
+                    if (userAnswer !== "" /* Make sure to add && typeof userAnswer === "string" to check and make sure user actually typed a name */) {
                         return true;
                     } return "You must enter a school name to continue" 
                 }
