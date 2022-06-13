@@ -182,8 +182,13 @@ function init() {
             });
     }
 
-    function createHTML() {
-        fs.writeFileSync("index.html", generate(teamArray))
+    function createHTML(fileName, data) {
+        fs.writeToFile("./dist/index.html", generate(teamArray), err => {
+            if (err) {
+                console.error(err);
+            }
+            console.log("index.html created")
+        })
     };  
     assignManager();
 }
