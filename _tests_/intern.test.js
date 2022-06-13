@@ -11,11 +11,6 @@ describe("Intern", () => {
             expect(testData.email).toEqual("bhill@stricklandpropane.com");
             expect(testData.school).toEqual("Clown College");
         });
-
-        it ("Should cause an error if no data is grabbed from the answers", () => {
-            const cb = () => new Intern();
-            expect(cb).toThrow();
-        });
     });
 
     describe("getSchool", () => {
@@ -23,6 +18,14 @@ describe("Intern", () => {
             const testData = new Intern("Bobby", 123, "bhill@stricklandpropane.com", "Clown College");
 
             expect(testData.getSchool()).toEqual("Clown College");
+        });
+    });
+
+    describe("getRole", () => {
+        it ("Should return the value of the role assigned to Intern (which is Intern)", () => {
+            const testData = new Intern("Bobby", 123, "bhill@stricklandpropane.com", "Clown College");
+
+            expect(testData.getRole()).toEqual("Intern");
         });
     });
 });
