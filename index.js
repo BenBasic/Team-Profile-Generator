@@ -183,7 +183,7 @@ function init() {
     }
 
     function createHTML(fileName, data) {
-        fs.writeToFile("./dist/index.html", generate(teamArray), err => {
+        fs.writeFile("./dist/index.html", generate(teamArray), err => {
             if (err) {
                 console.error(err);
             }
