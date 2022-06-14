@@ -10,7 +10,7 @@ const path = require("path");
 const fs = require("fs");
 // Assigning teamArray to empty array which will be populated with data once question prompts are answered by the user
 const teamArray = [];
-const idArray = [];
+
 
 
 // Creating the init function which contains all the functions of the program
@@ -68,7 +68,6 @@ function init() {
                 const manager = new Manager(answers.nameManager, answers.idManager, answers.emailManager, answers.phoneManager);
                 // Adds the Manager class with the related data to the teamArray
                 teamArray.push(manager);
-                idArray.push(answers.idManager);
                 // Calls the assignTeam function which prompts the user to add additional roles
                 assignTeam();
             });
@@ -151,7 +150,6 @@ function init() {
                 const engineer = new Engineer(answers.nameEngineer, answers.idEngineer, answers.emailEngineer, answers.githubEngineer);
                 // Adds the Manager class with the related data to the teamArray
                 teamArray.push(engineer);
-                idArray.push(answers.idEngineer);
                 // Calls the assignTeam function which prompts the user to add additional roles
                 assignTeam();
             });
@@ -209,7 +207,6 @@ function init() {
                 const intern = new Intern(answers.nameIntern, answers.idIntern, answers.emailIntern, answers.schoolIntern);
                 // Adds the Manager class with the related data to the teamArray
                 teamArray.push(intern);
-                idArray.push(answers.idIntern);
                 // Calls the assignTeam function which prompts the user to add additional roles
                 assignTeam();
             });
