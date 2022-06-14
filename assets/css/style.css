@@ -1,5 +1,58 @@
+:root {
+    --border: 5px solid rgb(80, 69, 119);
+    --radius: 10px;
+    --white: white;
+    --bg-color: rgb(100, 90, 138);
+    --bg-color-light: rgb(153, 146, 184);
+    --shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    background-color: rgb(142, 126, 202);
+  }
+
+.team-heading {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    font-weight: bolder;
+}
+
 .member-card {
-    margin: 10px;
-    background-color: rgb(255, 0, 0);
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    border: var(--border);
+    border-radius: var(--radius);
+}
+
+.card-body {
+    background-color: var(--bg-color-light);
+    border-color: transparent;
+}
+
+.list-group-item {
+    background-color: var(--bg-color);
+    border-color: var(--bg-color-light);
+}
+
+
+a:link {
+    color: rgb(216, 219, 118);
+}
+  
+a:visited {
+    color: rgb(183, 184, 146);
+}
+  
+a:hover {
+    color: rgb(253, 255, 181);
+}
+  
+a:active {
+    color: rgb(159, 161, 92);
 }
