@@ -7,6 +7,7 @@
 
   ## Table Of Contents
 
+  - [Screenshots](#screenshots)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
@@ -14,6 +15,13 @@
   - [Questions](#questions)
   - [Tests](#tests)
   - [Video](#video)
+
+  ## Screenshots
+
+
+![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot2.png)
+
 
   ## Installation
 
