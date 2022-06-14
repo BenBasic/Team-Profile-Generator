@@ -24,9 +24,9 @@ function init() {
                 type: "input",
                 name: "nameManager",
                 message: "What is your manager's first name?",
-                // Validating the user's answer to make sure they actually typed out a name and didnt try inputting a number as someone's name, if they didn't then they will be prompted to input a valid name
+                // Validating the user's answer to make sure they actually typed out a name, if they didn't then they will be prompted to input a valid name
                 validate: userAnswer => {
-                    if (userAnswer !== "" && typeof userAnswer === "string") {
+                    if (userAnswer !== "") {
                         return true;
                     } return "You must enter a valid first name to continue"
                 }
@@ -57,9 +57,9 @@ function init() {
                 type: "input",
                 name: "phoneManager",
                 message: "What is your manager's office phone number?",
-                // Validating the user's answer to make sure they actually typed out a phone number which would only contain numbers, and be within a certain length range, and if they didn't then they will be prompted to enter a valid phone number
+                // Validating the user's answer to make sure they actually typed out something, and be within a certain length range, and if they didn't then they will be prompted to enter a valid phone number
                 validate: userAnswer => {
-                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12 && typeof userAnswer === "number") {
+                    if (userAnswer !== "" && userAnswer.length > 6 && userAnswer.length < 12) {
                         return true;
                     } return "You must enter a valid phone number to continue" 
                 }
@@ -108,8 +108,8 @@ function init() {
                 name: "nameEngineer",
                 message: "What is your engineer's first name?",
                 validate: userAnswer => {
-                    // Validating the user's answer to make sure they actually typed out a name and didnt try inputting a number as someone's name, if they didn't then they will be prompted to input a valid name
-                    if (userAnswer !== "" && typeof userAnswer === "string") {
+                    // Validating the user's answer to make sure they actually typed out a name, if they didn't then they will be prompted to input a valid name
+                    if (userAnswer !== "") {
                         return true;
                     } return "You must enter a first name to continue"
                 }
@@ -166,8 +166,8 @@ function init() {
                 name: "nameIntern",
                 message: "What is your intern's first name?",
                 validate: userAnswer => {
-                    // Validating the user's answer to make sure they actually typed out a name and didnt try inputting a number as someone's name, if they didn't then they will be prompted to input a valid name
-                    if (userAnswer !== "" && typeof userAnswer === "string") {
+                    // Validating the user's answer to make sure they actually typed out a name, if they didn't then they will be prompted to input a valid name
+                    if (userAnswer !== "") {
                         return true;
                     } return "You must enter a first name to continue"
                 }
@@ -199,8 +199,8 @@ function init() {
                 name: "schoolIntern",
                 message: "What school does your intern go to?",
                 validate: userAnswer => {
-                    // Validating the user's answer to make sure they actually typed out a school name and didnt try inputting a number as a school's name, if they didn't then they will be prompted to input a valid name
-                    if (userAnswer !== "" && typeof userAnswer === "string") {
+                    // Validating the user's answer to make sure they actually typed out a school name, if they didn't then they will be prompted to input a valid name
+                    if (userAnswer !== "") {
                         return true;
                     } return "You must enter a school name to continue" 
                 }
