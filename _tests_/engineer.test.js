@@ -22,7 +22,7 @@ describe("Engineer", () => {
     });
 
     describe("getRole", () => {
-        it ("Should return the value of the role assigned to Intern (which is Intern)", () => {
+        it ("Should return the value of the role assigned to Engineer (which is Engineer)", () => {
             const testData = new Engineer("Hank", 111, "hhill@stricklandpropane.com", "BenBasic");
 
             expect(testData.getRole()).toEqual("Engineer");

@@ -22,7 +22,7 @@ describe("Manager", () => {
     });
 
     describe("getRole", () => {
-        it ("Should return the value of the role assigned to Intern (which is Intern)", () => {
+        it ("Should return the value of the role assigned to Manager (which is Manager)", () => {
             const testData = new Manager("Buck", 555, "bstrickland@stricklandpropane.com", "(912) 748-4422");
 
             expect(testData.getRole()).toEqual("Manager");
